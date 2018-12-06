@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+
+dependencies {
+    compile 'com.android.support:support-v13:18.0.+'
+    compile 'com.google.android.gms:play-services:3.2.65+'
+    compile 'com.google.api-client:google-api-client:1.17.0-rc'
+    compile 'com.google.api-client:google-api-client-android:1.17.0-rc'
+    compile 'com.google.http-client:google-http-client-gson:1.17.0-rc'
+    compile 'com.google.apis:google-api-services-drive:v2-rev102-1.17.0-rc'
+}
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 19
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+            proguardFile 'proguard-google-api-client.txt'
+        }
+    }
+}
